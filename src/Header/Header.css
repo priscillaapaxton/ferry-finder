@@ -1,0 +1,9 @@
+.header {
+  background-color: blue;
+  height: 25%;
+}
+
+.header-text {
+  font-size: 40px;
+  color: white;
+}
