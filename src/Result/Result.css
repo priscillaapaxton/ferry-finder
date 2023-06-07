@@ -1,0 +1,10 @@
+.result-card{
+  border: black 1.5px solid;
+  width: 70%;
+  height: 20%;
+}
+
+.route-name{
+  font-size: 50px;
+  color: black;
+}
