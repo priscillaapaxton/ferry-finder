@@ -13,17 +13,17 @@ class Dropdown extends Component {
     this.setState({
       selection: e.target.value
     })
-    this.props.setStartingPoint(e.target.value)
+    this.props.getAvailRoutes(e.target.value)
   }
 
   makeSelection = (e) => {
     e.preventDefault()
     if(this.state.selection.length > 1){
-    this.props.getAvailRoutes(this.state.selection)
-  }
-  this.setState({
-    selection: ''
-  })
+    this.props.setStartingPoint(this.state.selection)
+    }
+    this.setState({
+      selection: ''
+    })
   }
 
   render() {

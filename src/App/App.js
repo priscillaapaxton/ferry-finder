@@ -7,6 +7,7 @@ import destniationObject from '../DestinationObject';
 import Header from '../Header/Header';
 import Dropdown from '../Dropdown/Dropdown';
 import Results from '../Results/Results';
+import Schedule from '../Schedule/Schedule';
 
 class App extends Component {
   constructor() {
@@ -14,11 +15,10 @@ class App extends Component {
     this.state = {
       data: {},
       startingPoint: '',
+      startingPointAbbr: '',
       availRoutes: [],
-      routeNames: [],
       selectedSchedule: [],
       error: '',
-      loading: true
     }
   }
 
@@ -36,30 +36,32 @@ class App extends Component {
     })
   }
 
-  setStartingPoint = (selection) => {
-    this.setState({
-      startingPoint: destniationObject[selection],
-      availRoutes: Object.keys(this.state.data[selection])
-    })
+  getAvailRoutes = (selection) => {
+    if(selection) {
+      this.setState({
+        availRoutes: Object.keys(this.state.data[selection])
+      })
+    }
   }
 
-  getAvailRoutes = () => {
+  setStartingPoint = (selection) => {
       this.setState({
-        routeNames: this.state.availRoutes.map(route => {
-          return destniationObject[route]
-        })
+        startingPoint: destniationObject[selection],
+        startingPointAbbr: selection,
       })
   }
 
   getSchedule = (selection) => {
-    console.log('app', selection)
+    this.setState({
+      selectedSchedule: this.state.data[this.state.startingPointAbbr][selection].sailings
+    })
   }
 
   resetResults = () => {
     this.setState({
       startingPoint: '',
       availRoutes: [],
-      routeNames: []
+      startingPointAbbr: ''
     })
   }
 
@@ -68,12 +70,18 @@ class App extends Component {
       <>
         <Header resetResults={this.resetResults}/>
         <main className='app'>
-          <Route />
-          <Route exact path='/' render={() => (
-            !this.state.routeNames.length > 0 ? (
+          <Route 
+            exact path='/schedule/:abbreviation' 
+            render={() => {
+              return <Schedule schedule={this.state.selectedSchedule}/>
+            }} />
+          <Route 
+          exact path='/' 
+          render={() => (
+            !this.state.startingPoint.length > 0 ? (
               <Dropdown setStartingPoint={this.setStartingPoint} getAvailRoutes={this.getAvailRoutes}/>
             ) : (
-              <Results startingPoint={this.state.startingPoint} routeNames={this.state.routeNames} getSchedule={this.getSchedule}/>
+              <Results startingPoint={this.state.startingPoint} availRoutes={this.state.availRoutes} getSchedule={this.getSchedule}/>
             )
           )} />
         </main>
@@ -83,3 +91,23 @@ class App extends Component {
 }
 
 export default App;
+
+
+// render() {
+//   return(
+//     <>
+//       <Header resetResults={this.resetResults}/>
+//       <main className='app'>
+//         <Route />
+//         <Route exact path='/' render={() => (
+//           !this.state.routeNames.length > 0 ? (
+//             <Dropdown setStartingPoint={this.setStartingPoint} getAvailRoutes={this.getAvailRoutes}/>
+//           ) : (
+//             <Results startingPoint={this.state.startingPoint} routeNames={this.state.routeNames} getSchedule={this.getSchedule}/>
+//           )
+//         )} />
+//       </main>
+//     </>
+//   )
+// }
+// }
