@@ -28,24 +28,25 @@ class Dropdown extends Component {
 
   render() {
     return(
-      <>
-        <label htmlFor='locations'>Where are you located?</label>
-        <select id='locations' name='locations' 
-        value={this.state.selection}
-        onChange={this.changeSelection}
-        >
-          <option></option>
-          <option value='BOW'>Bowen Island</option>
-          <option value='DUK'>Duke Point</option>
-          <option value='FUL'>Fulford Bay</option>
-          <option value='HSB'>Horseshoe Bay</option>
-          <option value='LNG'>Langdale</option>
-          <option value='NAN'>Nanaimo</option>
-          <option value='SWB'>Swartz Bay</option>
-          <option value='TSA'>Tsawwassen</option>
-        </select>
-        <button onClick={this.makeSelection}>SUBMIT</button>
-      </>
+      <div className='dropdown'>
+        <label className='dropdown-text' htmlFor='locations'>Where are you located?</label>
+        <div className='select-container'>
+          <select className='select' id='locations' name='locations' 
+          value={this.state.selection}
+          onChange={this.changeSelection}>
+            <option></option>
+            <option value='BOW'>Bowen Island</option>
+            <option value='DUK'>Duke Point</option>
+            <option value='FUL'>Fulford Bay</option>
+            <option value='HSB'>Horseshoe Bay</option>
+            <option value='LNG'>Langdale</option>
+            <option value='NAN'>Nanaimo</option>
+            <option value='SWB'>Swartz Bay</option>
+            <option value='TSA'>Tsawwassen</option>
+          </select>
+          <button className='submit-button' onClick={this.makeSelection}>SUBMIT</button>
+        </div>
+      </div>
     )
   }
 }

@@ -1,9 +1,32 @@
 .header {
-  background-color: blue;
-  height: 200px;
+  background-color: rgb(15, 159, 207);
+  height: 195px;
+  border: solid rgb(84, 133, 201) 3px;
 }
 
-.header-text {
-  font-size: 40px;
+.header-container {
+  display: flex;
+  margin-left: 2%;
+}
+
+.home-logo {
+  height: 10em;
+}
+
+.header-text-container{
+  margin-left: 4em;
+}
+
+.header-title, .header-slogan {
+  font-family: monaco;
   color: white;
+}
+
+.header-title {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.header-slogan {
+  font-size: 25px;
 }

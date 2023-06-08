@@ -83,7 +83,9 @@ class App extends Component {
           exact path='/' 
           render={() => (
             !this.state.origin.length > 0 ? (
-              <Dropdown setOrigin={this.setOrigin} getAvailRoutes={this.getAvailRoutes}/>
+              <div className='dropdown-container'>
+                <Dropdown setOrigin={this.setOrigin} getAvailRoutes={this.getAvailRoutes}/>
+              </div>
             ) : (
               <Results origin={this.state.origin} availRoutes={this.state.availRoutes} getScheduleAndDestination={this.getScheduleAndDestination}/>
             )
