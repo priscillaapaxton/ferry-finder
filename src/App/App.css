@@ -1,4 +1,23 @@
-html,
-main {
+html, main {
   height: 100%;
 }
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+}
+
+
+.dropdown-container {
+  border-radius: 20px;
+  background-color: rgb(84, 133, 201);
+  margin-top: 2em;
+  width: 70em;
+  height: 30em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+

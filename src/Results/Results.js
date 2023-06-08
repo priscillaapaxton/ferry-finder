@@ -2,6 +2,7 @@ import './Results.css';
 import React from 'react';
 import Result from '../Result/Result';
 import destniationObject from '../DestinationObject';
+import PropTypes from 'prop-types';
 
 const Results = ({origin, availRoutes, getScheduleAndDestination}) => {
   return(
@@ -17,4 +18,9 @@ const Results = ({origin, availRoutes, getScheduleAndDestination}) => {
 }
 export default Results;
 
+Results.propTypes = {
+  origin: PropTypes.string.isRequired,
+  availRoutes: PropTypes.arrayOf(PropTypes.string).isRequired,
+  getScheduleAndDestination: PropTypes.func.isRequired
+}
 

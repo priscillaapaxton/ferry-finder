@@ -2,6 +2,7 @@ import './Schedule.css';
 import React from 'react';
 import ScheduleCard from '../ScheduleCard/ScheduleCard';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Schedule = ({ origin, destination, schedule }) => {
   return(
@@ -18,3 +19,9 @@ const Schedule = ({ origin, destination, schedule }) => {
 }
 
 export default Schedule;
+
+Schedule.propTypes = {
+  origin: PropTypes.string.isRequired,
+  destination: PropTypes.string.isRequired,
+  schedule: PropTypes.arrayOf(PropTypes.object).isRequired
+}
