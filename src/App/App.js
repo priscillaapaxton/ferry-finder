@@ -14,8 +14,9 @@ class App extends Component {
     super()
     this.state = {
       data: {},
-      startingPoint: '',
+      origin: '',
       startingPointAbbr: '',
+      destination: '',
       availRoutes: [],
       selectedSchedule: [],
       error: '',
@@ -44,24 +45,27 @@ class App extends Component {
     }
   }
 
-  setStartingPoint = (selection) => {
-      this.setState({
-        startingPoint: destniationObject[selection],
-        startingPointAbbr: selection,
-      })
+  setOrigin = (selection) => {
+    this.setState({
+      origin: destniationObject[selection],
+      startingPointAbbr: selection,
+    })
   }
 
-  getSchedule = (selection) => {
+  getScheduleAndDestination = (selection, destination) => {
     this.setState({
-      selectedSchedule: this.state.data[this.state.startingPointAbbr][selection].sailings
+      selectedSchedule: this.state.data[this.state.startingPointAbbr][selection].sailings,
+      destination: destination
     })
   }
 
   resetResults = () => {
     this.setState({
-      startingPoint: '',
+      origin: '',
       availRoutes: [],
-      startingPointAbbr: ''
+      startingPointAbbr: '',
+      destination: '',
+      selectedSchedule: []
     })
   }
 
@@ -73,15 +77,15 @@ class App extends Component {
           <Route 
             exact path='/schedule/:abbreviation' 
             render={() => {
-              return <Schedule schedule={this.state.selectedSchedule}/>
+              return <Schedule origin={this.state.origin} destination={this.state.destination} schedule={this.state.selectedSchedule}/>
             }} />
           <Route 
           exact path='/' 
           render={() => (
-            !this.state.startingPoint.length > 0 ? (
-              <Dropdown setStartingPoint={this.setStartingPoint} getAvailRoutes={this.getAvailRoutes}/>
+            !this.state.origin.length > 0 ? (
+              <Dropdown setOrigin={this.setOrigin} getAvailRoutes={this.getAvailRoutes}/>
             ) : (
-              <Results startingPoint={this.state.startingPoint} availRoutes={this.state.availRoutes} getSchedule={this.getSchedule}/>
+              <Results origin={this.state.origin} availRoutes={this.state.availRoutes} getScheduleAndDestination={this.getScheduleAndDestination}/>
             )
           )} />
         </main>
@@ -91,23 +95,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-// render() {
-//   return(
-//     <>
-//       <Header resetResults={this.resetResults}/>
-//       <main className='app'>
-//         <Route />
-//         <Route exact path='/' render={() => (
-//           !this.state.routeNames.length > 0 ? (
-//             <Dropdown setStartingPoint={this.setStartingPoint} getAvailRoutes={this.getAvailRoutes}/>
-//           ) : (
-//             <Results startingPoint={this.state.startingPoint} routeNames={this.state.routeNames} getSchedule={this.getSchedule}/>
-//           )
-//         )} />
-//       </main>
-//     </>
-//   )
-// }
-// }

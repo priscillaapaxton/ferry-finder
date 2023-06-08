@@ -3,12 +3,11 @@ import React from 'react';
 import ScheduleCard from '../ScheduleCard/ScheduleCard';
 import { NavLink } from 'react-router-dom';
 
-const Schedule = ({ schedule }) => {
+const Schedule = ({ origin, destination, schedule }) => {
   return(
     <div className='schedule-container'>
-      <h1></h1>
+      <h1>Current ferry schedules from {origin} to {destination}</h1>
       {schedule.map((sched, i) => {
-        console.log(sched)
         return(
           <ScheduleCard {...sched} key={i} />
         )})

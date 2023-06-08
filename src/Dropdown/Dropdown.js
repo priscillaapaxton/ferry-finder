@@ -19,7 +19,7 @@ class Dropdown extends Component {
   makeSelection = (e) => {
     e.preventDefault()
     if(this.state.selection.length > 1){
-    this.props.setStartingPoint(this.state.selection)
+    this.props.setOrigin(this.state.selection)
     }
     this.setState({
       selection: ''
@@ -50,4 +50,4 @@ class Dropdown extends Component {
   }
 }
 
-export default Dropdown
+export default Dropdown;
