@@ -4,7 +4,7 @@ const destniationObject = {
   FUL: "Fulford Bay",
   HSB: 'Horseshoe Bay',
   LNG: 'Langdale',
-  NAN: 'Nanimo',
+  NAN: 'Nanaimo',
   SWB: 'Swartz Bay',
   TSA: 'Tsawwassen',
   SGI: 'Southern Gulf Islands'
