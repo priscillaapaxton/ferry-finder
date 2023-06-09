@@ -30,3 +30,22 @@
 .header-slogan {
   font-size: 25px;
 }
+
+@media screen and (max-width: 43em) {
+  .home-logo {
+    height: 7em;
+  }
+
+  .header-text-container{
+    margin-left: 2em;
+  }
+
+  .header-title {
+    font-size: 25px;
+  }
+
+  .header-slogan {
+    font-size: 20px;
+  }
+}
+

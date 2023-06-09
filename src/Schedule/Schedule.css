@@ -1,0 +1,30 @@
+.schedule-container {
+  text-align: center;
+}
+
+.schedule-title {
+  font-family: monaco;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.back-to-results {
+  margin-bottom: 1em;
+  height: 50px;
+  width: 200px;
+  background-color: rgb(207, 66, 54);
+  border-radius: 6px;
+  border: none; 
+  outline: none; 
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 20px; 
+  cursor: pointer; 
+}
+
+@media screen and (max-width: 48em) {
+  .schedule-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}

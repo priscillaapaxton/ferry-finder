@@ -1,5 +1,6 @@
 .starting-point{
   color: black;
+  font-size: 30px;
   font-family: monaco;
 }
 
@@ -12,5 +13,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.results-cards-container {
+  width: 80%;
+  height: 75%;
+}
+
+.return-home {
+  margin-bottom: 1em;
+  height: 50px;
+  width: 200px;
+  background-color: rgb(207, 66, 54);
+  border-radius: 6px;
+  border: none; 
+  outline: none; 
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 20px; 
+  cursor: pointer; 
+}
+
+@media screen and (max-width: 54em) {
+  .starting-point {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 52em) {
+  .results-cards-container {
+    width: 80%;
+    height: 75%;
+  }
 }

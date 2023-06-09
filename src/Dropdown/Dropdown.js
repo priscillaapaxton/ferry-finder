@@ -1,5 +1,6 @@
 import './Dropdown.css';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Dropdown extends Component {
   constructor() {
@@ -52,3 +53,8 @@ class Dropdown extends Component {
 }
 
 export default Dropdown;
+
+Dropdown.propTypes = {
+  setOrigin: PropTypes.func.isRequired,
+  getAvailRoutes: PropTypes.func.isRequired
+}
