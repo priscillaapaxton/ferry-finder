@@ -21,13 +21,13 @@ const ScheduleCard = ({ time, arrivalTime, isCancelled, fill, carFill, oversizeF
 
 export default ScheduleCard;
 
-// ScheduleCard.propTypes = {
-//   time: PropTypes.string.isRequired,
-//   arrivalTime: PropTypes.string.isRequired,
-//   isCancelled: PropTypes.bool.isRequired,
-//   fill: PropTypes.number.isRequired,
-//   carFill: PropTypes.number.isRequired,
-//   oversizeFill: PropTypes.number.isRequired,
-//   vesselName: PropTypes.string.isRequired
-// }
+ScheduleCard.propTypes = {
+  time: PropTypes.string.isRequired,
+  arrivalTime: PropTypes.string.isRequired,
+  isCancelled: PropTypes.bool.isRequired,
+  fill: PropTypes.number.isRequired,
+  carFill: PropTypes.number.isRequired,
+  oversizeFill: PropTypes.number.isRequired,
+  vesselName: PropTypes.string.isRequired
+}
 

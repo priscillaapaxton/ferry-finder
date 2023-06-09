@@ -32,7 +32,11 @@
 }
 
 .submit-button {
+  display: block;
+  text-decoration: none;
+  text-align: center;
   margin-top: 0.5em;
+  line-height: 35px;
   height: 35px;
   background-color: rgb(27, 79, 114);
   border: none; 

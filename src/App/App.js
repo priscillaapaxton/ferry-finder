@@ -1,25 +1,22 @@
 import './App.css';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import React, { Component } from 'react';
 import { getFerryData } from '../apiCalls';
-import destniationObject from '../DestinationObject';
+import destinationObject from '../DestinationObject';
 
 import Header from '../Header/Header';
-// import Dropdown from '../Dropdown/Dropdown';
-// import Results from '../Results/Results';
 import Schedule from '../Schedule/Schedule';
 import Main from '../Main/Main';
 import Error from '../Error/Error';
+import { element } from 'prop-types';
+import Results from '../Results/Results';
+import Dropdown from '../Dropdown/Dropdown';
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      data: {},
-      origin: '',
-      originAbbr: '',
-      destination: '',
-      destinationAbbr: '',
+      data: null,
       error: '',
     }
   }
@@ -38,67 +35,59 @@ class App extends Component {
     })
   }
 
-  setOrigin = (selection) => {
-    this.setState({
-      origin: destniationObject[selection],
-      originAbbr: selection,
-    })
-  }
-
-  getDestination = (selection, destination) => {
-    this.setState({
-      destination: destination,
-      destinationAbbr: selection
-    })
-  }
-
-  resetResults = () => {
-    this.setState({
-      origin: '',
-      originAbbr: '',
-      destination: '',
-    })
-  }
-
-  resetSchedule = () => {
-    this.setState({
-      destination: '',
-      destinationAbbr: ''
-    })
-  }
-
   render() {
     return(
       <>
-        <Header resetResults={this.resetResults}/>
+        <Header />
         <main className='app'>
+          <Switch>
           <Route 
-            exact path='/schedule/:abbreviation' 
-            render={() => {
-              return <Schedule origin={this.state.origin} 
-              destination={this.state.destination} 
-              resetSchedule={this.resetSchedule}
-              error={this.state.error}
-              data={this.state.data}
-              originAbbr={this.state.originAbbr}
-              destinationAbbr={this.state.destinationAbbr}
+            exact path='/schedule/:originAbbr/:routeAbbr' 
+            render={({match}) => {
+              const originAbbr = match.params.originAbbr
+              const routeAbbr = match.params.routeAbbr
+
+              if(this.state.error.length) {
+                return <Error />
+              }
+              
+              if(!this.state.data) {
+                return <div className='starting-point'>Loading...</div>
+              }
+
+              return <Schedule 
+                data={this.state.data}
+                originAbbr={originAbbr}
+                destinationAbbr={routeAbbr}
               />
             }} />
+          <Route 
+            exact path='/schedule/:originAbbr'
+            render={({match}) => {
+              const originAbbr = match.params.originAbbr
+              if(this.state.error.length) {
+                return <Error />
+              }
+              if(!this.state.data) {
+                return <div className='starting-point'>Loading...</div>
+              }
+              return <Results
+                originAbbr={originAbbr}
+                data={this.state.data}
+              />
+            }
+          }
+          />
           <Route 
           exact path='/' 
           render={() => {
             return this.state.error ? (
               <Error />
             ) : (
-              <Main origin={this.state.origin} setOrigin={this.setOrigin}
-              availRoutes={this.state.availRoutes} 
-              getDestination={this.getDestination} 
-              resetResults={this.resetResults}
-              originAbbr={this.state.originAbbr} 
-              data={this.state.data}
-              />
+              <Dropdown />
             );
           }} />
+          </Switch>
         </main>
       </>
     )

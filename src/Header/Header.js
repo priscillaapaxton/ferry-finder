@@ -2,11 +2,11 @@ import './Header.css'
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const Header = ({resetResults}) => {
+const Header = () => {
   return(
     <header className='header'>
       <div className='header-container'>
-        <NavLink to='/' onClick={resetResults}>
+        <NavLink to='/'>
           <img className='home-logo' src='/homelogo.png' alt='blue and white ship on waves' />
         </NavLink>
         <div className='header-text-container'>
@@ -19,7 +19,3 @@ const Header = ({resetResults}) => {
 }
 
 export default Header;
-
-Header.propTypes = {
-  resetResults: PropTypes.func.isRequired
-}

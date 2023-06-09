@@ -23,6 +23,10 @@
 }
 
 .return-home {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
   margin-bottom: 1em;
   height: 50px;
   width: 200px;

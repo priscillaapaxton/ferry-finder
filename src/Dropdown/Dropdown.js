@@ -1,5 +1,6 @@
 import './Dropdown.css';
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 class Dropdown extends Component {
@@ -13,17 +14,6 @@ class Dropdown extends Component {
   changeSelection = (e) => {
     this.setState({
       selection: e.target.value
-    })
-    // this.props.getAvailRoutes(e.target.value)
-  }
-
-  makeSelection = (e) => {
-    e.preventDefault()
-    if(this.state.selection.length > 1){
-    this.props.setOrigin(this.state.selection)
-    }
-    this.setState({
-      selection: ''
     })
   }
 
@@ -45,7 +35,13 @@ class Dropdown extends Component {
             <option value='SWB'>Swartz Bay</option>
             <option value='TSA'>Tsawwassen</option>
           </select>
-          <button className='submit-button' onClick={this.makeSelection}>SUBMIT</button>
+          {this.state.selection ? (
+            <Link to={`/schedule/${this.state.selection}`} className='submit-button'>
+              SUBMIT
+            </Link>
+          ) : (
+            <button disabled className='submit-button'>SUBMIT</button>
+          )}
         </div>
       </div>
     )

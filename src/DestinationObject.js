@@ -1,4 +1,4 @@
-const destniationObject = {
+const destinationObject = {
   BOW: 'Bowen Island',
   DUK: 'Duke Point',
   FUL: "Fulford Bay",
@@ -10,4 +10,4 @@ const destniationObject = {
   SGI: 'Southern Gulf Islands'
 }
 
-export default destniationObject;
+export default destinationObject;
