@@ -8,7 +8,7 @@ const Result = ({ route, routeAbbr, getSchedule }) => {
     getSchedule(routeAbbr, route)
   }
   return(
-    <NavLink  to={`/schedule/${routeAbbr}`} >
+    <NavLink to={`/schedule/${routeAbbr}`} >
       <div className='result-card'>
         <h1 className='route-name' onClick={handleClick}>Ferry Schedule to {route}</h1>
       </div>

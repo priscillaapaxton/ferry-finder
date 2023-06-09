@@ -5,17 +5,29 @@ const ScheduleCard = ({ time, arrivalTime, isCancelled, fill, carFill, oversizeF
   return(
     <>
       <div className='schedule-card'>
-        <p className='schedule-card-text'>Departure: {time}</p>
-        {arrivalTime && <p className='schedule-card-text'>Arrival: {arrivalTime}</p>}
-        {isCancelled && <p className='schedule-card-text'>This ferry has been cancelled</p>}
-        <p className='schedule-card-text'>Current Passenger Capacity Status: {fill}%</p>
-        <p className='schedule-card-text'>Current Car Capacity Status: {carFill}%</p>
-        <p className='schedule-card-text'>Current Oversized Vehicle Capacity Status: {oversizeFill}%</p>
-        {vesselName && <p className='schedule-card-text'>Ferry name: {vesselName}</p>}
+        <div className='times'>
+          <p className='schedule-card-text'><b>Departs:</b> {time}</p>
+        {arrivalTime && <p className='schedule-card-text'><b>Arrives:</b> {arrivalTime}</p>}
+        </div>
+        {isCancelled && <p className='schedule-cancelled-card-text'><b>This ferry has been cancelled</b></p>}
+        <p className='schedule-card-text'><b>Current Passenger Capacity Status:</b> {fill}%</p>
+        <p className='schedule-card-text'><b>Current Car Capacity Status:</b> {carFill}%</p>
+        <p className='schedule-card-text'><b>Current Oversized Vehicle Capacity Status:</b> {oversizeFill}%</p>
+        {vesselName && <p className='schedule-card-text'><b>Ferry name:</b> {vesselName}</p>}
       </div>
     </>
   )
 }
+{/* <div className='schedule-card'>
+        <p className='schedule-card-text'><b>Departure:</b> {time}</p>
+        {arrivalTime && <p className='schedule-card-text'><b>Arrival:</b> {arrivalTime}</p>}
+        {isCancelled && <p className='schedule-cancelled-card-text'><b>This ferry has been cancelled</b></p>}
+        <p className='schedule-card-text'><b>Current Passenger Capacity Status:</b> {fill}%</p>
+        <p className='schedule-card-text'><b>Current Car Capacity Status:</b> {carFill}%</p>
+        <p className='schedule-card-text'><b>Current Oversized Vehicle Capacity Status:</b> {oversizeFill}%</p>
+        {vesselName && <p className='schedule-card-text'><b>Ferry name:</b> {vesselName}</p>}
+      </div> */}
+
 
 export default ScheduleCard;
 
@@ -28,3 +40,4 @@ ScheduleCard.propTypes = {
   oversizeFill: PropTypes.number.isRequired,
   vesselName: PropTypes.string.isRequired
 }
+
