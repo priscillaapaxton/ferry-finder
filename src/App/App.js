@@ -19,8 +19,7 @@ class App extends Component {
       origin: '',
       originAbbr: '',
       destination: '',
-      availRoutes: [],
-      selectedSchedule: [],
+      destinationAbbr: '',
       error: '',
     }
   }
@@ -39,14 +38,6 @@ class App extends Component {
     })
   }
 
-  getAvailRoutes = (selection) => {
-    if(selection) {
-      this.setState({
-        availRoutes: Object.keys(this.state.data[selection])
-      })
-    }
-  }
-
   setOrigin = (selection) => {
     this.setState({
       origin: destniationObject[selection],
@@ -54,27 +45,25 @@ class App extends Component {
     })
   }
 
-  getScheduleAndDestination = (selection, destination) => {
+  getDestination = (selection, destination) => {
     this.setState({
-      selectedSchedule: this.state.data[this.state.originAbbr][selection].sailings,
-      destination: destination
+      destination: destination,
+      destinationAbbr: selection
     })
   }
 
   resetResults = () => {
     this.setState({
       origin: '',
-      availRoutes: [],
       originAbbr: '',
       destination: '',
-      selectedSchedule: []
     })
   }
 
   resetSchedule = () => {
     this.setState({
-      selectedSchedule: [],
-      destination: ''
+      destination: '',
+      destinationAbbr: ''
     })
   }
 
@@ -86,7 +75,14 @@ class App extends Component {
           <Route 
             exact path='/schedule/:abbreviation' 
             render={() => {
-              return <Schedule origin={this.state.origin} destination={this.state.destination} schedule={this.state.selectedSchedule} resetSchedule={this.resetSchedule} error={this.state.error}/>
+              return <Schedule origin={this.state.origin} 
+              destination={this.state.destination} 
+              resetSchedule={this.resetSchedule}
+              error={this.state.error}
+              data={this.state.data}
+              originAbbr={this.state.originAbbr}
+              destinationAbbr={this.state.destinationAbbr}
+              />
             }} />
           <Route 
           exact path='/' 
@@ -94,7 +90,13 @@ class App extends Component {
             return this.state.error ? (
               <Error />
             ) : (
-              <Main origin={this.state.origin} setOrigin={this.setOrigin} getAvailRoutes={this.getAvailRoutes} availRoutes={this.state.availRoutes} getScheduleAndDestination={this.getScheduleAndDestination} resetResults={this.resetResults} />
+              <Main origin={this.state.origin} setOrigin={this.setOrigin}
+              availRoutes={this.state.availRoutes} 
+              getDestination={this.getDestination} 
+              resetResults={this.resetResults}
+              originAbbr={this.state.originAbbr} 
+              data={this.state.data}
+              />
             );
           }} />
         </main>

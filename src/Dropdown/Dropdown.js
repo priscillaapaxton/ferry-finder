@@ -14,7 +14,7 @@ class Dropdown extends Component {
     this.setState({
       selection: e.target.value
     })
-    this.props.getAvailRoutes(e.target.value)
+    // this.props.getAvailRoutes(e.target.value)
   }
 
   makeSelection = (e) => {
@@ -54,7 +54,7 @@ class Dropdown extends Component {
 
 export default Dropdown;
 
-Dropdown.propTypes = {
-  setOrigin: PropTypes.func.isRequired,
-  getAvailRoutes: PropTypes.func.isRequired
-}
+// Dropdown.propTypes = {
+//   setOrigin: PropTypes.func.isRequired,
+//   getAvailRoutes: PropTypes.func.isRequired
+// }

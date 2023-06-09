@@ -3,9 +3,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const Result = ({ route, routeAbbr, getSchedule }) => {
+const Result = ({ route, routeAbbr, getDestination }) => {
   const handleClick = () => {
-    getSchedule(routeAbbr, route)
+    getDestination(routeAbbr, route)
   }
   return(
     <NavLink to={`/schedule/${routeAbbr}`} >
@@ -18,8 +18,8 @@ const Result = ({ route, routeAbbr, getSchedule }) => {
 
 export default Result;
 
-Result.propTypes = {
-  route: PropTypes.string.isRequired,
-  routeAbbr: PropTypes.string.isRequired,
-  getSchedule: PropTypes.func.isRequired
-}
+// Result.propTypes = {
+//   route: PropTypes.string.isRequired,
+//   routeAbbr: PropTypes.string.isRequired,
+//   getSchedule: PropTypes.func.isRequired
+// }

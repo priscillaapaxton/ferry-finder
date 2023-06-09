@@ -4,21 +4,27 @@ import Dropdown from '../Dropdown/Dropdown';
 import Results from '../Results/Results';
 import PropTypes from 'prop-types';
 
-const Main = ({origin, setOrigin, getAvailRoutes, availRoutes, getScheduleAndDestination, resetResults}) => {
+const Main = ({ origin, setOrigin, getDestination,resetResults, originAbbr, data }) => {
   return !origin.length ? (
-    <Dropdown setOrigin={setOrigin} getAvailRoutes={getAvailRoutes}/>
+    <Dropdown setOrigin={setOrigin} />
   ) : (
-    <Results origin={origin} availRoutes={availRoutes} getScheduleAndDestination={getScheduleAndDestination} resetResults={resetResults}/>
+    <Results 
+    origin={origin} 
+    getDestination={getDestination} 
+    resetResults={resetResults}
+    originAbbr={originAbbr} 
+    data={data}
+    />
     ); 
 };
 
 export default Main;
 
-Main.propTypes = {
-  origin: PropTypes.string.isRequired,
-  setOrigin: PropTypes.func.isRequired,
-  getAvailRoutes: PropTypes.func.isRequired,
-  availRoutes: PropTypes.arrayOf(PropTypes.string).isRequired,
-  getScheduleAndDestination: PropTypes.func.isRequired,
-  resetResults: PropTypes.func.isRequired
-}
+// Main.propTypes = {
+//   origin: PropTypes.string.isRequired,
+//   setOrigin: PropTypes.func.isRequired,
+//   getAvailRoutes: PropTypes.func.isRequired,
+//   availRoutes: PropTypes.arrayOf(PropTypes.string).isRequired,
+//   getScheduleAndDestination: PropTypes.func.isRequired,
+//   resetResults: PropTypes.func.isRequired
+// }
