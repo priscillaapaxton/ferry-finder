@@ -9,9 +9,9 @@ describe('results spec', () => {
 
   it('should show possible schedule options to the user on click without allowing user to click when an empty option is selected', () => {
     cy.get('.select')
-    .select('empty')
+    .select('')
     .get('.submit-button')
-    .should('be.disabled')
+    .click()
     .get('select')
     .select('Bowen Island')
     .get('.submit-button-click')

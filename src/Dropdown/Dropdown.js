@@ -1,13 +1,12 @@
 import './Dropdown.css';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 class Dropdown extends Component {
   constructor() {
     super()
     this.state = {
-      selection: '',
+      selection: ''
     }
   }
 
@@ -40,18 +39,12 @@ class Dropdown extends Component {
               SUBMIT
             </Link>
           ) : (
-            // <button disabled className='submit-button'>SUBMIT</button>
-            <p className='submit-button'>Please make a selection!</p>
+            <p className='submit-button'>Please make a selection</p>
           )}
         </div>
       </div>
-    )
-  }
+    );
+  };
 }
 
 export default Dropdown;
-
-// Dropdown.propTypes = {
-//   setOrigin: PropTypes.func.isRequired,
-//   getAvailRoutes: PropTypes.func.isRequired
-// }
