@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const Result = ({ route, routeAbbr, originAbbr }) => {
 
   return(
-    <NavLink to={`/schedule/${originAbbr}/${routeAbbr}`} >
+    <NavLink className='result-nav-link' to={`/schedule/${originAbbr}/${routeAbbr}`} >
       <div className='result-card'>
         <h1 className='route-name' >Ferry Schedule to {route}</h1>
       </div>

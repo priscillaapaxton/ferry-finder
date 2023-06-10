@@ -1,0 +1,171 @@
+{
+  "schedule": {
+    "BOW": {
+        "HSB": {
+          "sailingDuration": "",
+          "sailings": [
+          {
+          "time": "5:20 am",
+          "arrivalTime": "5:40 am",
+          "isCancelled": false,
+          "fill": 0,
+          "carFill": 0,
+          "oversizeFill": 0,
+          "vesselName": "",
+          "vesselStatus": ""
+          },
+          {
+          "time": "6:20 am",
+          "arrivalTime": "6:40 am",
+          "isCancelled": false,
+          "fill": 0,
+          "carFill": 0,
+          "oversizeFill": 0,
+          "vesselName": "",
+          "vesselStatus": ""
+          },
+          {
+          "time": "7:30 am",
+          "arrivalTime": "7:50 am",
+          "isCancelled": false,
+          "fill": 0,
+          "carFill": 0,
+          "oversizeFill": 0,
+          "vesselName": "",
+          "vesselStatus": ""
+          },
+          {
+          "time": "8:35 am",
+          "arrivalTime": "8:55 am",
+          "isCancelled": false,
+          "fill": 0,
+          "carFill": 0,
+          "oversizeFill": 0,
+          "vesselName": "",
+          "vesselStatus": ""
+          },
+          {
+          "time": "9:35 am",
+          "arrivalTime": "9:55 am",
+          "isCancelled": false,
+          "fill": 0,
+          "carFill": 0,
+          "oversizeFill": 0,
+          "vesselName": "",
+          "vesselStatus": ""
+          },
+          {
+          "time": "10:40 am",
+          "arrivalTime": "11:00 am",
+          "isCancelled": false,
+          "fill": 0,
+          "carFill": 0,
+          "oversizeFill": 0,
+          "vesselName": "",
+          "vesselStatus": ""
+          },
+          {
+          "time": "12:05 pm",
+          "arrivalTime": "12:25 pm",
+          "isCancelled": false,
+          "fill": 0,
+          "carFill": 0,
+          "oversizeFill": 0,
+          "vesselName": "",
+          "vesselStatus": ""
+          },
+          {
+          "time": "1:15 pm",
+          "arrivalTime": "1:35 pm",
+          "isCancelled": false,
+          "fill": 0,
+          "carFill": 0,
+          "oversizeFill": 0,
+          "vesselName": "",
+          "vesselStatus": ""
+          },
+          {
+          "time": "2:40 pm",
+          "arrivalTime": "3:00 pm",
+          "isCancelled": false,
+          "fill": 0,
+          "carFill": 0,
+          "oversizeFill": 0,
+          "vesselName": "",
+          "vesselStatus": ""
+          },
+          {
+          "time": "4:00 pm",
+          "arrivalTime": "4:20 pm",
+          "isCancelled": false,
+          "fill": 0,
+          "carFill": 0,
+          "oversizeFill": 0,
+          "vesselName": "",
+          "vesselStatus": ""
+          },
+          {
+          "time": "5:10 pm",
+          "arrivalTime": "5:30 pm",
+          "isCancelled": false,
+          "fill": 0,
+          "carFill": 0,
+          "oversizeFill": 0,
+          "vesselName": "",
+          "vesselStatus": ""
+          },
+          {
+          "time": "6:15 pm",
+          "arrivalTime": "6:35 pm",
+          "isCancelled": false,
+          "fill": 0,
+          "carFill": 0,
+          "oversizeFill": 0,
+          "vesselName": "",
+          "vesselStatus": ""
+          },
+          {
+          "time": "7:20 pm",
+          "arrivalTime": "7:40 pm",
+          "isCancelled": false,
+          "fill": 0,
+          "carFill": 0,
+          "oversizeFill": 0,
+          "vesselName": "",
+          "vesselStatus": ""
+          },
+          {
+          "time": "8:50 pm",
+          "arrivalTime": "9:10 pm",
+          "isCancelled": false,
+          "fill": 0,
+          "carFill": 0,
+          "oversizeFill": 0,
+          "vesselName": "",
+          "vesselStatus": ""
+          },
+          {
+          "time": "9:50 pm",
+          "arrivalTime": "10:10 pm",
+          "isCancelled": false,
+          "fill": 0,
+          "carFill": 0,
+          "oversizeFill": 0,
+          "vesselName": "",
+          "vesselStatus": ""
+          },
+          {
+          "time": "10:50 pm",
+          "arrivalTime": "11:10 pm",
+          "isCancelled": false,
+          "fill": 0,
+          "carFill": 0,
+          "oversizeFill": 0,
+          "vesselName": "",
+          "vesselStatus": ""
+          }
+          ]
+          }
+    }
+  }
+}

@@ -6,7 +6,7 @@ import destinationObject from '../DestinationObject';
 
 import Header from '../Header/Header';
 import Schedule from '../Schedule/Schedule';
-import Main from '../Main/Main';
+import BadUrl from '../BadUrl/BadUrl';
 import Error from '../Error/Error';
 import { element } from 'prop-types';
 import Results from '../Results/Results';
@@ -87,6 +87,10 @@ class App extends Component {
               <Dropdown />
             );
           }} />
+          <Route path="*" render={() => {
+              return (
+                <BadUrl />)
+            }} />
           </Switch>
         </main>
       </>
