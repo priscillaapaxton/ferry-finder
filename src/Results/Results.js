@@ -3,34 +3,48 @@ import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Result from '../Result/Result';
-import destniationObject from '../DestinationObject';
+import destinationObject from '../DestinationObject';
 
-const Results = ({origin, availRoutes, getScheduleAndDestination, resetResults}) => {
-  return(
+const Results = ({ originAbbr, data }) => {
+
+  let origin = destinationObject[originAbbr]
+  let routes = [];
+  if (
+    originAbbr in data
+  ) {
+    routes = Object.keys(data[originAbbr]);
+  }
+  
+  return (
     <div className='results-container'>
-      <p className='starting-point'>Available Destinations From: {origin}</p>
+      {!origin ? <p className='starting-point'>Doesn't look like there's any ferry routes here</p> : <p className='starting-point'>Available Destinations From: {origin}</p>}
+      
       <div className='results-cards-container'>
-      {availRoutes.map((route, i) => {
-      return(
-          <Result getSchedule={getScheduleAndDestination} route={destniationObject[route]} routeAbbr={route} key={i}/>
-      )})
-      }
+        {!origin ? (
+          <div>nothing here...</div>
+        ) : (
+          routes.map((route) => (
+            <Result
+              route={destinationObject[route]} 
+              routeAbbr={route} 
+              originAbbr={originAbbr}
+              key={route}
+            />
+          ))
+        )}
       </div>
-      <NavLink to='/' onClick={resetResults}>
-        <button className='return-home'>
-          Return Home
-        </button>
+      
+      <NavLink to='/' className='return-home'>
+        Return Home
       </NavLink>
     </div>
-  )  
+  );
 }
 
 export default Results;
 
 Results.propTypes = {
-  origin: PropTypes.string.isRequired,
-  availRoutes: PropTypes.arrayOf(PropTypes.string).isRequired,
-  getScheduleAndDestination: PropTypes.func.isRequired,
-  resetResults: PropTypes.func.isRequired
+  originAbbr: PropTypes.string.isRequired,
+  data: PropTypes.object.isRequired
 }
 
