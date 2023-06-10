@@ -20,7 +20,7 @@ This application was completed over 5 days as the final project of Module3 in [T
 - JSX
 
 ## Deployed Pages
-- [Ferry Finder App]()
+- [Ferry Finder App](https://ferry-finder.netlify.app/)
 
 ## Wins
 -This application features a succint architecture, characterized by concise and well-organized code. The app component's state exclusively manages data retrieved from the API and handles errors, while child components access all relevant data through the parameters of their match objects. This design choice not only enhances readability but also streamlines the development process.
