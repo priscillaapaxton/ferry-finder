@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# British Columbia Ferry Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Abstract
+Ferry Finder provides up to date ferry schedules of ferry routes between the British Columbia Islands. Ferry finder is an easy to navigature interface providing details such as ferry capacity, possible cancellations, departure times, and more.
 
-## Available Scripts
+## Demonstration
+![giff of ferry finder](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2FhMjYwMTI3YTdlOTE0YmU2Y2Q3Y2ViYjVhNTJhYWJlZGEyY2E4NCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/NvyGKnyTVjMbM7eK4g/giphy.gif)
 
-In the project directory, you can run:
+## Context
+This application was completed over 5 days as the final project of Module3 in [Turing School of Software and Design](https://turing.edu/)'s Front End Engineering program. The project was built to match the specifications of [this project rubric](https://frontend.turing.edu/projects/module-3/showcase.html), which required each student to select and implement a public API in an application that demonstrates everything learned the five weeks prior.
 
-### `npm start`
+## Technologies used
+- React
+- Router
+- Cypress
+- Node.js
+- Vercel
+- PropTypes
+- CSS
+- JSX
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Deployed Pages
+- [Ferry Finder App]()
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Wins
+-This application features a succint architecture, characterized by concise and well-organized code. The app component's state exclusively manages data retrieved from the API and handles errors, while child components access all relevant data through the parameters of their match objects. This design choice not only enhances readability but also streamlines the development process.
+-Responsive Web Design
+-React Router Integration
 
-### `npm test`
+## Challenges
+- The main challenge encountered during this project was identifying the best architectural structure. Initially, the App component stored all the data in its state and then passed it to the child components. However, this approach led to unpredictable bugs as the child components rendered before the App component could update its state and pass the data as props. This issue resulted in unexpected behavior and hindered the smooth functioning of the application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Improvements
+-Some possible extensions in the future for this application could be
+  - User reviews of ferries and routes
+  - Additional API implementation of British Columbia public transportation or something adjacent 
 
-### `npm run build`
+## Installation
+- using the terminal, clone the [Ferry Finder](https://github.com/priscillaapaxton/ferry-finder)
+- `cd` into Ferry-Finder directory
+- run `npm i`
+- run `npm start`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contributor
+- Priscilla Paxton [GitHub](https://github.com/priscillaapaxton) | [LinkedIn](https://www.linkedin.com/in/priscilla-paxton/)
