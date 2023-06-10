@@ -1,7 +1,8 @@
 import './Schedule.css';
 import React, { Component } from 'react';
 import ScheduleCard from '../ScheduleCard/ScheduleCard';
-import { NavLink, useLocation } from 'react-router-dom';
+import BadUrl from '../BadUrl/BadUrl';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import destinationObject from '../DestinationObject';
 
@@ -20,7 +21,7 @@ class Schedule extends Component {
     return (
       <div className='schedule-container'>
         {!origin || !destination ? (
-          <p>Whoops wrong path</p>
+          <BadUrl />
         ) : (
           <>
             <p className='schedule-title'>Current ferry schedules over the next 24 hours from {origin} to {destination}</p>
