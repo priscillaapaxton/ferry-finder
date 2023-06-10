@@ -6,7 +6,7 @@ describe('app spec', () => {
     })
     cy.visit('http://localhost:3000/')
   })
-  it.skip('should display all information to user upon page arrival', () => {
+  it('should display all information to user upon page arrival', () => {
     cy.get('header')
     .get('.home-logo')
     cy.contains('.header-title', 'Ferry Finder')

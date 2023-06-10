@@ -6,7 +6,7 @@ describe('results spec', () => {
     })
   })
 
-  it.skip('should take the use to a page that displays the correct new url for selected destination', () => {
+  it('should take the use to a page that displays the correct new url for selected destination', () => {
     cy.visit('http://localhost:3000/schedule/BOW')
     .get('.results-container')
     .contains('Available Destinations From: Bowen Island')
@@ -17,14 +17,14 @@ describe('results spec', () => {
     cy.url().should('eq', 'http://localhost:3000/schedule/BOW/HSB')
   })
 
-  it.skip('should display the schedule', () => {
+  it('should display the schedule', () => {
     cy.visit('http://localhost:3000/schedule/BOW/HSB')
     .get('.schedule-container')
     .get('.schedule-card')
     .should('have.length', 16)
   })
 
-  it.skip('should display schedule information on each card', () => {
+  it('should display schedule information on each card', () => {
     cy.visit('http://localhost:3000/schedule/BOW/HSB')
     .get('.schedule-card')
     cy.contains('p', 'Departs: 5:20 am')
@@ -40,7 +40,7 @@ describe('results spec', () => {
     cy.contains('p', 'Current Oversized Vehicle Capacity Status: 0%')
   })
 
-  it.skip('should display a button so user can return to results component', () => {
+  it('should display a button so user can return to results component', () => {
     cy.visit('http://localhost:3000/schedule/BOW/HSB')
     .get('.back-to-results')
     .click()

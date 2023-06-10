@@ -7,7 +7,7 @@ describe('results spec', () => {
     cy.visit('http://localhost:3000/')
   })
 
-  it.skip('should show possible schedule options to the user on click without allowing user to click when an empty option is selected', () => {
+  it('should show possible schedule options to the user on click without allowing user to click when an empty option is selected', () => {
     cy.get('.select')
     .select('empty')
     .get('.submit-button')
@@ -23,7 +23,7 @@ describe('results spec', () => {
     .contains('h1', 'Ferry Schedule to Horseshoe Bay')
   })
 
-  it.skip('user should be able to return to home page with the header logo', () => {
+  it('user should be able to return to home page with the header logo', () => {
     cy.get('.home-logo')
     .click()
     cy.url().should('eq', 'http://localhost:3000/')

@@ -25,7 +25,7 @@ class Dropdown extends Component {
           <select className='select' id='locations' name='locations' 
           value={this.state.selection}
           onChange={this.changeSelection}>
-            <option value='empty'></option>
+            <option value=''> </option>
             <option value='BOW'>Bowen Island</option>
             <option value='DUK'>Duke Point</option>
             <option value='FUL'>Fulford Bay</option>
@@ -40,7 +40,8 @@ class Dropdown extends Component {
               SUBMIT
             </Link>
           ) : (
-            <button disabled className='submit-button'>SUBMIT</button>
+            // <button disabled className='submit-button'>SUBMIT</button>
+            <p className='submit-button'>Please make a selection!</p>
           )}
         </div>
       </div>
