@@ -21,3 +21,13 @@
   color: black;
   font-family: monaco;
 }
+
+@media screen and (max-width: 62em) {
+  .error-logo {
+    height: 30%
+  }
+
+  .error-text {
+    font-size: 25px;
+  }
+}

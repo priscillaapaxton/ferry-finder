@@ -51,29 +51,3 @@ describe('user link errors', () => {
     cy.get('.return-home')
   })
 })
-
-
-// describe('sad path spec', () => {
-
-
-//   it.skip('should display error image if there is an issue wit.skiph the API server', () => {
-//     cy.intercept('https://www.bcferriesapi.ca/api/', {
-//       statusCode: 503,
-//       body: 'Error: Failed to fetch'
-//     })
-//     cy.visit('http://localhost:3000/')
-//     cy.find('.error-container')
-//     .contains('.error-logo')
-//     .contains('p', 'Man overboard! Looks like we are experiencing some issues with our server...')
-//   })
-
-//   it.skip('should display error image if there is an issue with the API server', () => {
-//     cy.intercept('https://www.bcferriesapi.ca/api/', {
-//       statusCode: 504,
-//       body: 'Error: Failed to fetch'
-//     })
-//     cy.visit('http://localhost:3000/')
-//     cy.find('.error-container')
-//     .contains('.error-logo')
-//     .contains('p', 'Man overboard! Looks like we are experiencing some issues with our server...')
-//   })

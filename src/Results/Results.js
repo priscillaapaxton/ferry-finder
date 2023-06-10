@@ -7,7 +7,6 @@ import BadUrl from '../BadUrl/BadUrl';
 import destinationObject from '../DestinationObject';
 
 const Results = ({ originAbbr, data }) => {
-
   let origin = destinationObject[originAbbr]
   let routes = [];
   if (
@@ -15,7 +14,6 @@ const Results = ({ originAbbr, data }) => {
   ) {
     routes = Object.keys(data[originAbbr]);
   }
-  
   return (
     <div className='results-container'>
       {!origin ? (
@@ -36,17 +34,16 @@ const Results = ({ originAbbr, data }) => {
             <Link to='/' className='return-home'>
               Return Home
             </Link>
-          
         </>
       )}
     </div>
   );
-}
+};
 
 export default Results;
 
 Results.propTypes = {
   originAbbr: PropTypes.string.isRequired,
   data: PropTypes.object.isRequired
-}
+};
 

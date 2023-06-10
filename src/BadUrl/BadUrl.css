@@ -20,3 +20,18 @@
   color: black;
   font-family: monaco;
 }
+
+@media screen and (max-width: 52em) {
+ .bad-url-container{
+  height: 100%;
+  width: 100%;
+ }
+
+  .bad-url-logo {
+    height: 45%
+  }
+
+  .bad-url-text {
+    font-size: 20px;
+  }
+}
