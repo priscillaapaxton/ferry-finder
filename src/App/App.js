@@ -22,7 +22,7 @@ class App extends Component {
     getFerryData()
     .then(data => {
       this.setState({
-        data: data.schedule
+        data: data
       })
     })
     .catch(error => {
@@ -31,6 +31,7 @@ class App extends Component {
       })
     })
   }
+              
 
   render() {
     return(

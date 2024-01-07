@@ -35,5 +35,14 @@ describe('server error spec', () => {
     .get('.error-container')
     .contains('p', 'Man overboard! Looks like we are experiencing some issues with our server...')
   })
+
+  it('should display to the user if a bad url path is input', () => {
+    cy.visit('http://localhost:3000/kjsaf')
+    cy.get('.bad-url-container')
+      .get('.bad-url-logo')
+      .get('.bad-url-container')
+      .contains('Uh-oh. There doesn\'t appear to be anything here.')
+    cy.get('.return-home')
+  })
 })
 
