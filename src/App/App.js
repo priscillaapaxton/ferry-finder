@@ -64,7 +64,7 @@ class App extends Component {
                   return <Error />
                 }
                 if(!this.state.data) {
-                  return <div className='starting-point'>Loading...error</div>
+                  return <div className='starting-point'>Loading...</div>
                 }
                 return <Results
                   originAbbr={originAbbr}
