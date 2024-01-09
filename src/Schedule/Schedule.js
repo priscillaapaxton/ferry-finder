@@ -1,5 +1,5 @@
 import './Schedule.css';
-import React, { Component } from 'react';
+import React from 'react';
 import ScheduleCard from '../ScheduleCard/ScheduleCard';
 import BadUrl from '../BadUrl/BadUrl';
 import { NavLink } from 'react-router-dom';
